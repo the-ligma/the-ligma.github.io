@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                xmlns:foaf="http://xmlns.com/foaf/0.1/">
+                xmlns:foaf="http://xmlns.com/foaf/0.1/"
+                xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
 
     <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
 
-    <xsl:template match="/rdf:RDF">
+    <xsl:template match="/">
         <html>
             <head>
                 <title>FOAF RDF to XHTML</title>
             </head>
             <body>
                 <h1>FOAF RDF Information</h1>
-                <xsl:apply-templates select="rdf:Description"/>
+                <xsl:apply-templates select="//foaf:Person"/>
             </body>
         </html>
     </xsl:template>
 
-    <xsl:template match="rdf:Description">
+    <xsl:template match="foaf:Person">
         <div style="margin-bottom: 20px; border: 1px solid #ccc; padding: 10px;">
             <h2>
                 <xsl:value-of select="foaf:name"/>
@@ -32,7 +33,6 @@
                 <li><strong>See Also:</strong> <a href="{rdfs:seeAlso/@rdf:resource}"><xsl:value-of select="rdfs:seeAlso/@rdf:resource"/></a></li>
             </ul>
         </div>
-        <xsl:apply-templates select="foaf:knows/foaf:Person"/>
     </xsl:template>
 
 </xsl:stylesheet>

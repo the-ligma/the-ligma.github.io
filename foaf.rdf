@@ -9,6 +9,8 @@
         <foaf:family_name>Ligny</foaf:family_name>
         <foaf:homepage rdf:resource="https://the-ligma.github.io/foaf.rdf"/>
         <foaf:mbox_sha1sum>8714ef7088ece792b48b97281e5b93765c0e93c5</foaf:mbox_sha1sum>
+        <foaf:workplaceHomepage rdf:resource="http://www.cat-amania.com/"/>
+        <foaf:schoolHomepage rdf:resource="http://www.univ-lr.fr/"/>
         <rdfs:seeAlso rdf:resource="https://the-ligma.github.io/"/>
     </foaf:Person>
 
